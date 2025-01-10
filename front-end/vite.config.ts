@@ -9,9 +9,19 @@ export default mergeConfig(
     test: {
       globals: true,
       environment: "jsdom",
-      setupFiles: "./src/setupTests.ts",
+      setupFiles: "./test/setupTests.ts",
       coverage: {
-        reporter: ["text", "json", "html"],
+        reporter: ["text"],
+        include: ["src/**/*"],
+        exclude: [
+          "**/types.ts",
+          "**/styled.ts",
+          "**/vite-env.d.ts",
+          "node_modules",
+          "dist",
+          "coverage",
+          "build",
+        ],
       },
     },
   }),
