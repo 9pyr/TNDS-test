@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap&family=Noto+Sans+Thai&display=swap");
+
+body {
+  margin: 0;
+}
+* {
+  font-family: "Roboto", "Noto Sans Thai", sans-serif;
+}
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-primary: #000;
+  --color-hard-gray: #aaaaaa;
+  --color-gray: #cacaca;
+  --color-soft-gray: #ececec;
+  --color-text-gray: #a2a2a2;
+
+  --radius: 2px;
+  --radius-circle: 50px;
+
+  --anime-speed: 300ms;
+
+  --font-small: 0.7rem;
+  --font-medium: 0.9rem;
+  --font-large: 1.1rem;
+}
+
+.d-flex {
+  display: flex;
+}

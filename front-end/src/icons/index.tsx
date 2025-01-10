@@ -1,0 +1,5 @@
+export { default as ArrowRightIcon } from './ArrowRight'
+export { default as RouteIcon } from './Route'
+export { default as ChevronLeftIcon } from './ChevronLeft'
+export { default as ChevronRightIcon } from './ChevronRight'
+export { default as ImagesIcon } from './Images'
