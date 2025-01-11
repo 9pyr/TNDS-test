@@ -22,10 +22,13 @@ export default function useGetTrips() {
   }, [keyword])
 
   useEffect(() => {
-    const debounce = setTimeout(
-      () => setSearchParams({ keyword: searchValue }),
-      DELAY
-    )
+    const debounce = setTimeout(() => {
+      if (searchValue) {
+        setSearchParams({ keyword: searchValue })
+      } else {
+        setSearchParams({})
+      }
+    }, DELAY)
 
     return () => {
       clearTimeout(debounce)
