@@ -2,8 +2,8 @@
   "name": "json-server",
   "version": "1.0.0",
   "scripts": {
-    "start": "json-server --watch db.json --port 9000",
-    "dev": "node index.js"
+    "start": "node index.js",
+    "dev": "yarn start"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
