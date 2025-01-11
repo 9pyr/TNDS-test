@@ -11,15 +11,9 @@ const SearchInput = () => {
     defaultValue: "",
   })
 
-  const { onChange, ...initialField } = field
-
   return (
     <InputContainer>
-      <Input
-        onChange={onChange}
-        {...initialField}
-        placeholder="หาที่เที่ยวแล้วไปกับ..."
-      />
+      <Input {...field} placeholder="หาที่เที่ยวแล้วไปกับ..." />
     </InputContainer>
   )
 }
