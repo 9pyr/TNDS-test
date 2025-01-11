@@ -1,6 +1,5 @@
 import serverApi from "../core/serverApi"
 import express from "express"
-import { isString } from "lodash"
 import { TripModel } from "./types"
 import { constants as httpStatus } from "http2"
 
@@ -13,21 +12,11 @@ export const getTripsSearch = async (
   const { keyword } = query
 
   try {
-    const { data = [] } = await serverApi.get<TripModel[]>("trips")
+    const { data = [] } = await serverApi.get<TripModel[]>("trips", {
+      params: { keyword },
+    })
 
-    let filteredData = data
-    if (keyword && isString(keyword)) {
-      const pattern = new RegExp(keyword, "i")
-      // Filter or search data from keyword
-      filteredData = data.filter(
-        (item) =>
-          pattern.test(item.title) ||
-          pattern.test(item.description) ||
-          item.tags.includes(keyword)
-      )
-    }
-
-    res.status(httpStatus.HTTP_STATUS_OK).json(filteredData)
+    res.status(httpStatus.HTTP_STATUS_OK).json(data)
   } catch (error) {
     console.error("Error in getTripsSearch controller: ", error)
     res
